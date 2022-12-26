@@ -43,10 +43,10 @@ public class CheckQuestionsBlockTest {
     public void checkFaqList() {
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-        MainPage mp = new MainPage(driver);
-        mp.openPage();
-        List<WebElement> questionsList = mp.getQuestionsListElements();
-        List<WebElement> answersList = mp.getAnswersListElements();
+        MainPage mainPage = new MainPage(driver);
+        mainPage.openPage();
+        List<WebElement> questionsList = mainPage.getQuestionsListElements();
+        List<WebElement> answersList = mainPage.getAnswersListElements();
         for (int i = 0; i < questionsList.size(); i++) {
             WebElement el = questionsList.get(i);
             if (el.getText().equals(questionHeader)) {
