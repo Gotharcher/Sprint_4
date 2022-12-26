@@ -10,15 +10,15 @@ import java.util.List;
 public class MainPage {
     private WebDriver driver;
 
-    //Заказ в шапке
+    //Р—Р°РєР°Р· РІ С€Р°РїРєРµ
     private By upperOrderButton = By.xpath("//*[@id=\"root\"]/div/div/div[1]/div[2]/button[1]");
-    //Заказ внизу
+    //Р—Р°РєР°Р· РІРЅРёР·Сѓ
     private By downOrderButton  = By.xpath("//*[@id=\"root\"]/div/div/div[4]/div[2]/div[5]/button");
-    //Блок вопросов
+    //Р‘Р»РѕРє РІРѕРїСЂРѕСЃРѕРІ
     private By questionsList    = By.className("accordion__button");
-    //Блок ответов
+    //Р‘Р»РѕРє РѕС‚РІРµС‚РѕРІ
     private By answersList      = By.className("accordion__panel");
-    //Кукисы
+    //РљСѓРєРёСЃС‹
     private By cookiesWarning = By.xpath("//*[@id=\"rcc-confirm-button\"]");
 
 

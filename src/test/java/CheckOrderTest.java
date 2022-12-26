@@ -35,8 +35,8 @@ public class CheckOrderTest {
     @Parameterized.Parameters
     public static Object[][] getFaqs() {
         return new Object[][]{
-                {true, "Арсений", "Чепик", "Ко мне домой", "Октябрьское поле", "89111234567", "31.12.2022", 5, "чёрный жемчуг", "Без комментариев"},
-                {true, "Chepik", "Arseny", "To my work", "Лубянка", "89111234567", "25.12.2022", 10, "серая безысходность", ""},
+                {true, "РђСЂСЃРµРЅРёР№", "Р§РµРїРёРє", "РљРѕ РјРЅРµ РґРѕРјРѕР№", "РћРєС‚СЏР±СЂСЊСЃРєРѕРµ РїРѕР»Рµ", "89111234567", "31.12.2022", 5, "С‡С‘СЂРЅС‹Р№ Р¶РµРјС‡СѓРі", "Р‘РµР· РєРѕРјРјРµРЅС‚Р°СЂРёРµРІ"},
+                {true, "Chepik", "Arseny", "To my work", "Р›СѓР±СЏРЅРєР°", "89111234567", "25.12.2022", 10, "СЃРµСЂР°СЏ Р±РµР·С‹СЃС…РѕРґРЅРѕСЃС‚СЊ", ""},
         };
     }
 
@@ -54,7 +54,7 @@ public class CheckOrderTest {
         OrderPage orderPage = new OrderPage(driver);
         orderPage.enterFirstPageAndProceed(name, surname, address, metro, phone);
         orderPage.enterSecondPageAndPlaceOrder(date, days, color, comment);
-        Assert.assertTrue("Заказ размещен", orderPage.orderPlaced());
+        Assert.assertTrue("Р—Р°РєР°Р· СЂР°Р·РјРµС‰РµРЅ", orderPage.orderPlaced());
     }
 
 
