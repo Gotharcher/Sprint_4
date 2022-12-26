@@ -10,15 +10,15 @@ import java.util.List;
 public class MainPage {
     private WebDriver driver;
 
-    //Заказ в шапке
+    //Р—Р°РєР°Р· РІ С€Р°РїРєРµ
     private By upperOrderButton = By.xpath("//*[@id=\"root\"]/div/div/div[1]/div[2]/button[1]");
-    //Заказ внизу
-    private By downOrderButton  = By.xpath("//*[@id=\"root\"]/div/div/div[4]/div[2]/div[5]/button");
-    //Блок вопросов
-    private By questionsList    = By.className("accordion__button");
-    //Блок ответов
-    private By answersList      = By.className("accordion__panel");
-    //Кукисы
+    //Р—Р°РєР°Р· РІРЅРёР·Сѓ
+    private By downOrderButton = By.xpath("//*[@id=\"root\"]/div/div/div[4]/div[2]/div[5]/button");
+    //Р‘Р»РѕРє РІРѕРїСЂРѕСЃРѕРІ
+    private By questionsList = By.className("accordion__button");
+    //Р‘Р»РѕРє РѕС‚РІРµС‚РѕРІ
+    private By answersList = By.className("accordion__panel");
+    //РљСѓРєРёСЃС‹
     private By cookiesWarning = By.xpath("//*[@id=\"rcc-confirm-button\"]");
 
 
@@ -26,18 +26,20 @@ public class MainPage {
         this.driver = driver;
     }
 
-    public void openPage(){
+    public void openPage() {
         driver.get("https://qa-scooter.praktikum-services.ru/");
 
         WebElement cookiesEle = driver.findElement(cookiesWarning);
-        if(cookiesEle.isDisplayed()){cookiesEle.click();}
+        if (cookiesEle.isDisplayed()) {
+            cookiesEle.click();
+        }
     }
 
-    public void clickUpperOrderButton(){
+    public void clickUpperOrderButton() {
         driver.findElement(upperOrderButton).click();
     }
 
-    public void clickDownOrderButton(){
+    public void clickDownOrderButton() {
         JavascriptExecutor js = (JavascriptExecutor) driver;
 
         WebElement element = driver.findElement(downOrderButton);
@@ -46,11 +48,11 @@ public class MainPage {
         element.click();
     }
 
-    public List<WebElement> getQuestionsListElements(){
+    public List<WebElement> getQuestionsListElements() {
         return driver.findElements(questionsList);
     }
 
-    public List<WebElement> getAnswersListElements(){
+    public List<WebElement> getAnswersListElements() {
         return driver.findElements(answersList);
     }
 }

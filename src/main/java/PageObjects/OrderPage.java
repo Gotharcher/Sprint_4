@@ -11,40 +11,40 @@ public class OrderPage {
 
     private String xpathLocator = "//*[@id=\"root\"]/div/div[2]/div[2]";
 
-    //Имя
+    //РРјСЏ
     private final By orderName = By.xpath(xpathLocator + "/div[1]/input");
-    //Фамилия
+    //Р¤Р°РјРёР»РёСЏ
     private final By orderSurname = By.xpath(xpathLocator + "/div[2]/input");
-    //Куда привезти
+    //РљСѓРґР° РїСЂРёРІРµР·С‚Рё
     private final By orderAddress = By.xpath(xpathLocator + "/div[3]/input");
-    //Станция метро список
+    //РЎС‚Р°РЅС†РёСЏ РјРµС‚СЂРѕ СЃРїРёСЃРѕРє
     private final By orderMetro = By.xpath(xpathLocator + "/div[4]/div/div/input");
-    //Номер телефона
+    //РќРѕРјРµСЂ С‚РµР»РµС„РѕРЅР°
     private final By orderPhone = By.xpath(xpathLocator + "/div[5]/input");
 
-    //Кнопка далее
+    //РљРЅРѕРїРєР° РґР°Р»РµРµ
     private final By nextButton = By.className("Button_Middle__1CSJM");
 
-    //Дата заказа
+    //Р”Р°С‚Р° Р·Р°РєР°Р·Р°
     private final By orderDate = By.xpath(xpathLocator + "/div[1]/div/div/input");
-//  //Дата в календаре
+    //  //Р”Р°С‚Р° РІ РєР°Р»РµРЅРґР°СЂРµ
 //    private final By selectDay = By.xpath(xpathLocator + "/div[1]/div[2]/div[2]/div/div/div[2]/div[2]/div/div[@tabindex = 0]");
-    //Количество дней заказа
+    //РљРѕР»РёС‡РµСЃС‚РІРѕ РґРЅРµР№ Р·Р°РєР°Р·Р°
     private final By orderDays = By.xpath(xpathLocator + "/div[2]/div[1]/div[1]");
-    //Список с количеством дней
+    //РЎРїРёСЃРѕРє СЃ РєРѕР»РёС‡РµСЃС‚РІРѕРј РґРЅРµР№
     private final By orderDayLength = By.className("Dropdown-option");
-    //Чекбоксы цветов самоката
+    //Р§РµРєР±РѕРєСЃС‹ С†РІРµС‚РѕРІ СЃР°РјРѕРєР°С‚Р°
     private final By orderColor = By.className("Checkbox_Label__3wxSf");
-    //Комментарий
+    //РљРѕРјРјРµРЅС‚Р°СЂРёР№
     private final By orderComment = By.xpath(xpathLocator + "/div[4]/input");
 
-    //Кнопка Заказать
+    //РљРЅРѕРїРєР° Р—Р°РєР°Р·Р°С‚СЊ
     private final By getOrderFinal = By.xpath("//*[@id=\"root\"]/div/div[2]/div[3]/button[2]");
-    //Кнопка Точно Заказать
+    //РљРЅРѕРїРєР° РўРѕС‡РЅРѕ Р—Р°РєР°Р·Р°С‚СЊ
     private final By orderConfirm = By.xpath("//*[@id=\"root\"]/div/div[2]/div[5]/div[2]/button[2]");
 
-    //Окно подтверждения заказа (из фаерфокса)
-    private final By orderCreated = By.xpath("//div[text()='Заказ оформлен']");
+    //РћРєРЅРѕ РїРѕРґС‚РІРµСЂР¶РґРµРЅРёСЏ Р·Р°РєР°Р·Р° (РёР· С„Р°РµСЂС„РѕРєСЃР°)
+    private final By orderCreated = By.xpath("//div[text()='Р—Р°РєР°Р· РѕС„РѕСЂРјР»РµРЅ']");
 
     public OrderPage(WebDriver driver) {
         this.driver = driver;
@@ -80,7 +80,7 @@ public class OrderPage {
         new WebDriverWait(driver, 3).until(ExpectedConditions.elementToBeClickable(orderDate));
     }
 
-    public void enterFirstPageAndProceed(String name, String surname, String address, String metro, String phone){
+    public void enterFirstPageAndProceed(String name, String surname, String address, String metro, String phone) {
         enterName(name);
         enterSurname(surname);
         enterAddress(address);
@@ -125,7 +125,7 @@ public class OrderPage {
         driver.findElement(orderConfirm).click();
     }
 
-    public void enterSecondPageAndPlaceOrder(String date, int days, String color, String comment){
+    public void enterSecondPageAndPlaceOrder(String date, int days, String color, String comment) {
         enterDate(date);
         enterDays(days);
         selectColors(color);
